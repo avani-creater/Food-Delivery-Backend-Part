@@ -1,4 +1,4 @@
-import restaurant from '../../src/utils/mockData.js';
+
 import restaurantMenuModel from '../Model/restaurantMenu.model.js'
 export function createRestaurantMenuItem(req, res) {
     const { name, imageUrl, defaultPrice, description, restaurantId } = req.body;

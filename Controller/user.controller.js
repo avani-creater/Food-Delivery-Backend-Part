@@ -1,5 +1,5 @@
 import userModel from "../Model/user.model.js";
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken'
 export function register(req,res){
     const{fullName, email, password} =req.body;
