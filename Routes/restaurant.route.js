@@ -1,5 +1,5 @@
-import { createRestaurant, deleteOneRestaurant, fetchRestaurants, updateOneRestaurant} from "../Controller/restaurant.controller.js";
-import { verifyUser } from "../Middlewares/verifyUser.js";
+
+import { createRestaurant, deleteOneRestaurant, fetchRestaurants, updateOneRestaurant } from "../Controller/restaurant.controller.js";
 
 
 export function routes(app){
