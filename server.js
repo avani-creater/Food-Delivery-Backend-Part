@@ -5,12 +5,19 @@ import { menuRoutes } from './Routes/restaurantMenu.routes.js';
 import { userRoutes } from './Routes/user.routes.js';
 import cors from 'cors'
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 
 
 app.use(express.json());
 app.use(cors());
-mongoose.connect('mongodb://localhost:27017');
+
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 
 const db = mongoose.connection;
 
@@ -26,6 +33,7 @@ routes(app);
 menuRoutes(app);
 userRoutes(app);
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
